@@ -1,0 +1,13 @@
+version: '2'
+services:
+  database:
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_USER: recipe_site_user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: recipe_site
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d

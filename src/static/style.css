@@ -1,0 +1,493 @@
+* {
+  --var-color-white: #eeeee5;
+  --var-color-light-brown: #a79086;
+  --var-color-brown: #673e37;
+  --var-color-dark-brown: #1b1210;
+  --var-color-cherry: #6d031c;
+
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--var-color-white);
+}
+
+.header {
+  width: 100%;
+  height: 320px;
+  position: relative;
+}
+
+.header-panel {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  height: 160px;
+  background-color: var(--var-color-brown);
+  /* border-bottom: 1px solid var(--var-color-dark-brown); */
+  /* border-top: 1px solid var(--var-color-dark-brown); */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.header-panel {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  height: 160px;
+  background-color: var(--var-color-brown);
+  /*border-bottom: 1px solid var(--var-color-dark-brown);
+  border-top: 1px solid var(--var-color-dark-brown);*/
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.header-welcome {
+  position: absolute;
+  bottom: 10px;
+  color: var(--var-color-dark-brown);
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.header-logo {
+  margin-top: -52px;
+  width: 360px;
+  height: 240px;
+  background-color: var(--var-color-dark-brown);
+  transform: rotateZ(-2deg);
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 8px;
+  color: var(--var-color-white);
+  text-align: center;
+  padding: 60px 0;
+  font-size: 60px;
+}
+
+.header-link {
+	width: 120px;
+	height: 80px;
+	margin-right: 16px;
+	margin-left: 16px;
+	background-color: var(--var-color-dark-brown);
+	border-radius: 8px;
+	color: var(--var-color-white);
+	text-align: center;
+	padding: 25px 0;
+	font-size: 15px;
+}
+
+.username {
+	font-size: small;
+}
+
+.username-link {
+	padding-top: 15px;
+	overflow: hidden; /* korisno kad je ime dugačko */
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+.header-link-left {
+  transform: rotateZ(-5deg);
+}
+
+.header-link-right {
+  transform: rotateZ(5deg);
+}
+
+a {
+  text-decoration: none;
+  color: var(--var-color-cherry);
+}
+
+.layout {
+  /*width: 100%;*/
+  display: flex;
+  flex-wrap: wrap; /* za bolji izgled na nižim rezolucijama */
+  justify-content: center;
+}
+
+.recipe-display {
+	background-color: var(--var-color-dark-brown);
+	width: 100%;
+}
+
+.recipe-display-header {
+	width: 100%;
+	height: 80px;
+	color: var(--var-color-white);
+	text-align: left;
+	padding: 16px 32px;
+	font-size: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.recipe-display-body {
+	width: 100%;
+	display: flex;
+	font-size: 20px;
+}
+
+.recipe-display-contents {
+	background-color: var(--var-color-white);
+	color: var(--var-color-dark-brown);
+	border-top-right-radius: 40px;
+	width: 70%;
+	padding: 40px;
+}
+
+.recipe-display-info {
+	width: 30%;
+	color: var(--var-color-white);
+	padding: 40px;
+}
+
+.recipe-display-info-field {
+	margin-bottom: 10px;
+}
+
+ol {
+	list-style: none;
+	counter-reset: item;
+}
+
+/* https://stackoverflow.com/questions/23610151/can-you-style-ordered-list-numbers */
+.list-item::before {
+	margin-right: 10px;
+	content: counter(item);
+	border-radius: 100%;
+	border: 4px solid var(--var-color-cherry);
+	color: var(--var-color-cherry);
+	width: 48px;
+	height: 48px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 40px;
+	flex-shrink: 0;
+}
+
+.list-item {
+	counter-increment: item;
+	margin-bottom: 24px;
+	line-height: 30px;
+	display: flex;
+	align-items: center;
+}
+
+/* koristi se za h2 u koracima recepta */
+.flex-grow-1 {
+	flex-grow: 1;
+}
+
+.recipe-list {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+	max-width: 1240px;
+}
+
+.recipe-card {
+	width: 240px;
+	height: 320px;
+	background-color: var(--var-color-dark-brown);
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: var(--var-color-white);
+	margin: 8px;
+}
+
+.recipe-card-content {
+	padding: 4px;
+	font-size: smaller;
+}
+
+.recipe-card-image {
+	width: 100%;
+	flex-grow: 1;
+	flex-shrink: 1;
+	object-fit: cover;
+	border-top-left-radius: 16px;
+	border-top-right-radius: 16px;
+	height: 0;
+}
+
+.recipe-card-heading {
+	font-size: 20px;
+	padding: 12px;
+	text-align: center;
+}
+
+.alert {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid var(--var-color-light-brown);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+  color: var(--var-color-dark-brown);
+}
+
+.alert-dark {
+	width: 100%;
+	padding: 20px;
+	border: 1px solid var(--var-color-white);
+	border-radius: 8px;
+	margin-bottom: 16px;
+	text-align: center;
+	color: var(--var-color-white);
+	background-color: var(--var-color-dark-brown);
+}
+
+.form {
+  /* bez align-items:center, dugme u formi bi bilo iste širine kao druga input polja */
+  border: 1px solid var(--var-color-light-brown);
+  border-radius: 16px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+.form-small {
+	display: flex;
+	align-items: center;
+}
+
+.form-dark {
+	border: 0;
+	background-color: var(--var-color-dark-brown);
+	color: var(--var-color-white);
+}
+
+.input {
+  margin-bottom: 16px;
+  border: 1px solid var(--var-color-light-brown);
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  background-color: var(--var-color-white);
+  color: var(--var-color-dark-brown);
+  resize: vertical;
+}
+
+.input-small {
+	border: 1px solid var(--var-color-light-brown);
+	border-radius: 8px;
+	padding: 8px;
+	background-color: var(--var-color-white);
+	color: var(--var-color-dark-brown);
+	margin-bottom: 16px;
+  width: 4em;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--var-color-brown);
+  color: var(--var-color-white);
+  text-decoration: underline;
+}
+
+.button {
+  border: 1px solid var(--var-color-light-brown);
+  border-radius: 8px;
+  padding: 8px 24px;
+  background-color: var(--var-color-white);
+  color: var(--var-color-dark-brown);
+  height: min-content;
+  font-size: 16px;
+  flex-grow: 0;
+  margin: 0 4px;
+  line-height: 16px;
+  font-family: Tahoma, sans-serif;
+  white-space: nowrap;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 8px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+iframe {
+  width: 100%;
+  height: 500px;
+}
+
+.heading {
+  color: var(--var-color-cherry);
+  width: 100%;
+  text-align: center;
+}
+
+.contact-info {
+  border: 1px solid var(--var-color-light-brown);
+  border-radius: 16px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  margin-left: 16px;
+}
+
+.contact-map-container {
+  width: 100%;
+  border: 1px solid var(--var-color-brown);
+  margin: 20px 20px 16px;
+}
+
+textarea {
+  /* Zahvaljujući min-height, ne može se "razvući" na niže od 200px. */
+  min-height: 200px;
+}
+
+.notfound {
+	width: 600px;
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--var-color-dark-brown);
+	color: var(--var-color-white);
+}
+
+.notfound-header {
+	width: 100%;
+	padding: 20px;
+	font-size: 40px;
+	text-align: center;
+}
+
+.notfound-body {
+	border: 1px solid var(--var-color-light-brown);
+	border-bottom-left-radius: 16px;
+	border-bottom-right-radius: 16px;
+	background-color: var(--var-color-white);
+	width: 100%;
+	color: var(--var-color-dark-brown);
+	padding: 20px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.slider {
+	display: flex;
+	width: 100%;
+	max-width: 1200px;
+	height: 336px;
+	align-items: center;
+}
+
+.slider-button {
+	border-radius: 100%;
+	border: 4px solid var(--var-color-cherry);
+	color: var(--var-color-cherry);
+	width: 48px;
+	height: 48px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 40px;
+	margin: 20px;
+	cursor: pointer;
+}
+
+.slider-content {
+	flex-grow: 1;
+	flex-shrink: 1;
+	overflow-x: hidden;
+	position: relative;
+	height: 100%;
+}
+
+.slider-content-inner {
+	position: absolute;
+	display: flex;
+	transition: 0.5s left ease;
+	left: 0;
+}
+
+.side-menu-recipe {
+	width: 100%;
+	display: block;
+	padding: 12px;
+	background-color: var(--var-color-white);
+	border-radius: 12px;
+	margin-bottom: 12px;
+}
+
+.side-menu.hidden {
+	left: -500px;
+}
+
+.side-menu-button.hidden {
+	left: 0;
+}
+
+/* overflow-y: auto postavka čini da se po potrebi  (velik broj recepata) doda scrollbar */
+.side-menu {
+	width: 500px;
+	position: fixed;
+	left: 0;
+	top: 0;
+  /* side menu se prostire na 100% visine viewporta */
+	height: 100vh;
+	background-color: var(--var-color-brown);
+	border-right: 1px solid var(--var-color-dark-brown);
+	transition: 0.5s left;
+	color: var(--var-color-white);
+	padding: 12px;
+	overflow-y: auto;
+	z-index: 1;
+}
+
+.side-menu-button {
+	position: fixed;
+	left: 500px;
+	top: 50px;
+	width: 20px;
+	height: 80px;
+	background-color: var(--var-color-brown);
+	border: 1px solid var(--var-color-dark-brown);
+	border-left: 0;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	cursor: pointer;
+	transition: 0.5s left;
+	padding: 30px 4px;
+}
+
+.footer {
+  /* column omogućava da jedna linija teksta bude iznad druge,
+  a da istovremeno budu centrirane.
+   */
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--var-color-dark-brown);
+}
